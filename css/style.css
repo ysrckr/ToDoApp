@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #18a0fb;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px auto;
+  max-width: 600px;
+  text-align: center;
+  background-color: #5cc9f5;
+  -webkit-box-shadow: 29px 33px 23px -29px rgba(0, 0, 0, 0.67);
+          box-shadow: 29px 33px 23px -29px rgba(0, 0, 0, 0.67);
+}
+
+h1 {
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.search {
+  padding: 20px;
+  margin-bottom: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search .search-input {
+  padding: 5px 40px;
+  border: none;
+  -webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+}
+
+.search .search-input:focus {
+  border: 2px solid grey !important;
+  outline: none !important;
+  outline-offset: 0;
+}
+
+.list-container {
+  border: 3px solid rgba(244, 244, 244, 0.5);
+  margin: 20px auto 40px auto;
+  padding: 100px;
+}
+
+.list-container .list {
+  list-style: none;
+}
+
+.list-container .list .list-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr 1fr;
+      grid-template-columns: 3fr 1fr 1fr;
+  gap: .2em;
+  margin: 20px auto;
+  width: 250px;
+}
+
+.list-container .list .list-item .text {
+  text-align: left;
+}
+
+.add {
+  padding: 50px;
+  margin-bottom: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add .add-input {
+  padding: 10px 80px;
+  border: none;
+  -webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+}
+
+.add .add-input:focus {
+  border: 2px solid grey !important;
+  outline: none !important;
+  outline-offset: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 20%;
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.btn:hover {
+  background-color: darkgray;
+  color: white;
+  padding: 15px;
+  -webkit-box-shadow: -35px -31px 23px -29px rgba(0, 0, 0, 0.67);
+          box-shadow: -35px -31px 23px -29px rgba(0, 0, 0, 0.67);
+}
+
+.invisible {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
