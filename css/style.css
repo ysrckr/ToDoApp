@@ -5,10 +5,6 @@
           box-sizing: border-box;
 }
 
-body {
-  background-color: #18a0fb;
-}
-
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,9 +16,10 @@ body {
   margin: 50px auto;
   max-width: 600px;
   text-align: center;
-  background-color: #5cc9f5;
+  background-color: #5c5ff596;
   -webkit-box-shadow: 29px 33px 23px -29px rgba(0, 0, 0, 0.67);
           box-shadow: 29px 33px 23px -29px rgba(0, 0, 0, 0.67);
+  border-radius: 20%;
 }
 
 h1 {
