@@ -1,6 +1,7 @@
 const addForm = document.querySelector('.add')
 const addInput = document.querySelector('.add-input')
 const list = document.querySelector('.list')
+const listItem = document.querySelector('.list-item')
 const editBtn = document.querySelector('.edit-btn')
 const http = 'http://localhost:5000'
 
@@ -10,7 +11,7 @@ addEventListener('DOMContentLoaded', async () => {
 		const data = await response.json()
 		console.log(data)
 		data.map(item => {
-			list.innerHTML += `<li class="list-item">
+			list.innerHTML += `<li class="list-item" data-id=${item.id}>
 		<span class="text">${item.body}</span>
 		<span class="edit"><i class="far fa-edit"></i></span
 		><span class="delete"><i class="fas fa-trash"></i></span>
@@ -34,18 +35,32 @@ addForm.addEventListener('submit', async e => {
 		})
 		const data = await res.json()
 		if (data) {
-			location.reload()
+			list.innerHTML += `<li class="list-item" data-id=${data.id}>
+		<span class="text">${data.body}</span>
+		<span class="edit"><i class="far fa-edit"></i></span
+		><span class="delete"><i class="fas fa-trash"></i></span>
+	</li>`
 		}
-
-		console.log(data)
 	} catch (err) {
 		console.log(err.message)
 	}
 })
 
-list.addEventListener('click', e => {
-	if (e.target.classList.contains('fa-trash')) {
-		e.target.parentElement.parentElement.remove()
+list.addEventListener('click', async e => {
+	try {
+		if (e.target.classList.contains('fa-trash')) {
+			const listItem = e.target.parentElement.parentElement
+			console.log(listItem.dataset.id)
+			const res = await fetch(`${http}/${listItem.dataset.id}`, {
+				method: 'DELETE',
+				headers: { 'Content-Type': 'application/json' },
+			})
+			if (res.status == 204) {
+				e.target.parentElement.parentElement.remove()
+			}
+		}
+	} catch (err) {
+		console.log(err.message)
 	}
 })
 

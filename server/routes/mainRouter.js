@@ -33,7 +33,7 @@ router.delete('/:id', async (req, res) => {
 		await pool.query('DELETE FROM todos WHERE id=$1 returning *', [
 			req.params.id,
 		])
-		res.status(204).send('Successfully Deleted')
+		res.status(204).json({ msg:'Successfully Deleted'})
 		console.log('Successfully deleted')
 	} catch (err) {
 		console.log(err.message)
@@ -46,7 +46,7 @@ router.patch('/:id', async (req, res) => {
 			req.body.body,
 			req.params.id,
 		])
-		res.status(200).send(response.rows[0])
+		res.status(200).json(response.rows[0])
 	} catch (err) {
 		console.log(err.message)
 	}
